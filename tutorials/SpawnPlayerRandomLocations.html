@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Spawn player at random locations &mdash; nanos.world Documentation  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+        <script type="text/javascript" src="../_static/js/script.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Glossary" href="../scripting/Glossary.html" />
+    <link rel="prev" title="Populating Testing Map" href="PopulatingTestingMap.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About us</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/ServerManual.html">Server Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/Scripting.html">Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/Assets.html">Assets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/ContributingToDocs.html">Contributing to the Docs</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials &amp; Examples</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ComunicationBetweenPackages.html">Comunication Between Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PopulatingTestingMap.html">Populating Testing Map</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Spawn player at random locations</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/classes/index.html">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Character.html">Character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Grenade.html">Grenade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Item.html">Item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Player.html">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Prop.html">Prop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Vehicle.html">Vehicle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Weapon.html">Weapon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/global-variables/index.html">Global Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Client.html">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Package.html">Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/NanosWorld.html">NanosWorld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Render.html">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Server.html">Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Timer.html">Timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/World.html">World</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/utility/index.html">Utility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/utility/Color.html">Color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/utility/Rotator.html">Rotator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/utility/Vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/utility/Vector2D.html">Vector2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/utility/NanosMathLibrary.html">NanosMathLibrary</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Modding</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modding/index.html">Modding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modding/MapsAndLevels.html">Maps &amp; Levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modding/StaticMeshes.html">Static Meshes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">nanos.world Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Spawn player at random locations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/nanos-world/docs/blob/master/tutorials/SpawnPlayerRandomLocations.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="spawn-player-at-random-locations">
+<span id="tutorialspawnplayerrandomlocations"></span><h1>Spawn player at random locations<a class="headerlink" href="#spawn-player-at-random-locations" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Spawn player at specific location see: <span class="xref std std-ref">TutorialSpawnPlayer</span></p>
+</div>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>When a player enters the server, the player must be assigned to a character.
+The player can be spawned at random predefined locations.
+Each time the player dies or spawns again, a random location should be determined.
+As soon as the player leaves the server, the character must be removed as well.</p>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-THVh docutils container">
+<div class="docutils container">
+<p>Lua</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-THVh active docutils container">
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- List of Start Locations to spawn (like player_start)</span>
+<span class="n">startLocations</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">2006.000000</span><span class="p">,</span> <span class="mf">8287.000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">200.000000</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">4701.000000</span><span class="p">,</span> <span class="mf">7058.000000</span><span class="p">,</span> <span class="mf">236.000000</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="mf">7065.000000</span><span class="p">,</span> <span class="mf">5516.000000</span><span class="p">,</span> <span class="mf">192.000000</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="mf">4084.000000</span><span class="p">,</span> <span class="mf">8175.000000</span><span class="p">,</span> <span class="mf">238.000046</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">4661.070801</span><span class="p">,</span> <span class="o">-</span><span class="mf">688.318481</span><span class="p">,</span> <span class="mf">295.228271</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="mf">9349.953125</span><span class="p">,</span> <span class="o">-</span><span class="mf">776.581421</span><span class="p">,</span> <span class="mf">215.060547</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="mf">6221.000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">7602.000000</span><span class="p">,</span> <span class="mf">197.000000</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="mf">344.223877</span><span class="p">,</span> <span class="o">-</span><span class="mf">4713.804199</span><span class="p">,</span> <span class="mf">517.179199</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">2352.433594</span><span class="p">,</span> <span class="o">-</span><span class="mf">6579.508789</span><span class="p">,</span> <span class="mf">313.297119</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">7831.000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">7635.000000</span><span class="p">,</span> <span class="mf">197.000000</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">9481.000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">2884.350830</span><span class="p">,</span> <span class="mf">185.215271</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">8014.036621</span><span class="p">,</span> <span class="o">-</span><span class="mf">754.221375</span><span class="p">,</span> <span class="mf">394.598022</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">9400.706055</span><span class="p">,</span> <span class="mf">3869.706299</span><span class="p">,</span> <span class="mf">186.855911</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5850.000000</span><span class="p">,</span> <span class="mf">8164.000000</span><span class="p">,</span> <span class="mf">222.000046</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">2050.000000</span><span class="p">,</span> <span class="mf">6654.000000</span><span class="p">,</span> <span class="mf">228.000000</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1207.603516</span><span class="p">,</span> <span class="mf">5056.930176</span><span class="p">,</span> <span class="mf">235.285980</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="mf">3760.009277</span><span class="p">,</span> <span class="mf">10620.053711</span><span class="p">,</span> <span class="mf">119.038712</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="mf">3143.985352</span><span class="p">,</span> <span class="mf">8324.702148</span><span class="p">,</span> <span class="mf">248.355957</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="mf">6910.936035</span><span class="p">,</span> <span class="o">-</span><span class="mf">1799.466309</span><span class="p">,</span> <span class="mf">267.055115</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="mf">1569.594360</span><span class="p">,</span> <span class="o">-</span><span class="mf">10662.000000</span><span class="p">,</span> <span class="mf">216.248596</span><span class="p">),</span>
+        <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">4014.836670</span><span class="p">,</span> <span class="o">-</span><span class="mf">4764.884766</span><span class="p">,</span> <span class="mf">713.900269</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">-- Returns a random Start Location</span>
+<span class="kr">function</span> <span class="nf">getRandomStartLocation</span><span class="p">()</span>
+        <span class="kr">return</span> <span class="n">startLocations</span><span class="p">[</span><span class="nb">math.random</span><span class="p">(</span><span class="o">#</span><span class="n">startLocations</span><span class="p">)]</span>
+<span class="kr">end</span>
+
+<span class="c1">-- Called when Players connect to the server</span>
+<span class="n">Player</span><span class="p">:</span><span class="n">on</span><span class="p">(</span><span class="s2">&quot;Spawn&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+        <span class="c1">-- Gets a Initial Location for the Character (it will always respawn at this position passed through the</span>
+        <span class="c1">-- constructor, you can change this with SetInitialLocation)</span>
+        <span class="kd">local</span> <span class="n">initialLocation</span> <span class="o">=</span> <span class="n">getRandomStartLocation</span><span class="p">()</span>
+
+        <span class="c1">-- Spawns a Character</span>
+        <span class="kd">local</span> <span class="n">newChar</span> <span class="o">=</span> <span class="n">Character</span><span class="p">(</span><span class="n">initialLocation</span><span class="p">)</span>
+
+        <span class="c1">-- Possess the new Character</span>
+        <span class="n">player</span><span class="p">:</span><span class="n">Possess</span><span class="p">(</span><span class="n">newChar</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+
+<span class="c1">-- Called when Character respawns</span>
+<span class="n">Character</span><span class="p">:</span><span class="n">on</span><span class="p">(</span><span class="s2">&quot;Respawn&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+        <span class="c1">-- Pick a random location</span>
+        <span class="kd">local</span> <span class="n">location</span> <span class="o">=</span> <span class="n">getRandomStartLocation</span><span class="p">()</span>
+
+        <span class="c1">-- Sets the Initial Character&#39;s Location (location where the Character will spawn). After the Respawn event, a</span>
+        <span class="c1">-- call for SetLocation(InitialLocation) will be triggered. If you always want something to respawn at the same</span>
+        <span class="c1">-- position you do not need to keep setting SetInitialLocation, this is just for respawning at random spots</span>
+        <span class="n">character</span><span class="p">:</span><span class="n">SetInitialLocation</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+<span class="kr">end</span><span class="p">)</span>
+
+<span class="c1">-- Called when Player unpossess a Character</span>
+<span class="n">Player</span><span class="p">:</span><span class="n">on</span><span class="p">(</span><span class="s2">&quot;UnPossess&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">character</span><span class="p">,</span> <span class="n">bIsPlayerDisconnecting</span><span class="p">)</span>
+        <span class="c1">-- If Player is disconnecting from the server, destroys it&#39;s Character</span>
+        <span class="kr">if</span> <span class="p">(</span><span class="n">bIsPlayerDisconnecting</span><span class="p">)</span> <span class="kr">then</span>
+                <span class="n">character</span><span class="p">:</span><span class="n">Destroy</span><span class="p">()</span>
+        <span class="kr">end</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../scripting/Glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="PopulatingTestingMap.html" class="btn btn-neutral float-left" title="Populating Testing Map" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, nanos GbR
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

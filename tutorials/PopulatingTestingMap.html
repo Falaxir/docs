@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Populating Testing Map &mdash; nanos.world Documentation  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.js"></script>
+        <script type="text/javascript" src="../_static/sphinx_tabs/tabs.js"></script>
+        <script type="text/javascript" src="../_static/js/script.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/segment.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/menu.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/semantic-ui-2.4.1/tab.min.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/sphinx_tabs/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Spawn player at random locations" href="SpawnPlayerRandomLocations.html" />
+    <link rel="prev" title="Comunication Between Packages" href="ComunicationBetweenPackages.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">General</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">About us</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started/index.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/ServerManual.html">Server Manual</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/Scripting.html">Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/Assets.html">Assets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../getting_started/ContributingToDocs.html">Contributing to the Docs</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials &amp; Examples</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ComunicationBetweenPackages.html">Comunication Between Packages</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Populating Testing Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpawnPlayerRandomLocations.html">Spawn player at random locations</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scripting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/classes/index.html">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Character.html">Character</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Grenade.html">Grenade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Item.html">Item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Player.html">Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Prop.html">Prop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Vehicle.html">Vehicle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/classes/Weapon.html">Weapon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/global-variables/index.html">Global Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Client.html">Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Events.html">Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Package.html">Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/NanosWorld.html">NanosWorld</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Render.html">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Server.html">Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/Timer.html">Timer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/global-variables/World.html">World</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scripting/utility/index.html">Utility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/utility/Color.html">Color</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/utility/Rotator.html">Rotator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/utility/Vector.html">Vector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/utility/Vector2D.html">Vector2D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripting/utility/NanosMathLibrary.html">NanosMathLibrary</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Modding</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modding/index.html">Modding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../modding/MapsAndLevels.html">Maps &amp; Levels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../modding/StaticMeshes.html">Static Meshes</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">nanos.world Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Tutorials</a> &raquo;</li>
+        
+      <li>Populating Testing Map</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/nanos-world/docs/blob/master/tutorials/PopulatingTestingMap.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="populating-testing-map">
+<span id="populatingtestingmap"></span><h1>Populating Testing Map<a class="headerlink" href="#populating-testing-map" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>This is part of the default script used in the testing sessions</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This Script uses <a class="reference external" href="https://github.com/nanos-world/nanos-world-weapons">https://github.com/nanos-world/nanos-world-weapons</a> Package.</p>
+</div>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<div class="sphinx-tabs docutils container">
+<div class="ui top attached tabular menu sphinx-menu docutils container">
+<div class="active item sphinx-data-tab-THVh docutils container">
+<div class="docutils container">
+<p>Lua</p>
+</div>
+</div>
+</div>
+<div class="ui bottom attached sphinx-tab tab segment code-tab sphinx-data-tab-THVh active docutils container">
+<div class="highlight-lua notranslate"><div class="highlight"><pre><span></span><span class="c1">-- Includes Nanos World Weapons Package</span>
+<span class="n">Package</span><span class="p">:</span><span class="n">RequirePackage</span><span class="p">(</span><span class="s2">&quot;nanos-world-weapons&quot;</span><span class="p">)</span>
+
+<span class="n">NanosTestingMap</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="n">Server</span><span class="p">:</span><span class="n">on</span><span class="p">(</span><span class="s2">&quot;Start&quot;</span><span class="p">,</span> <span class="kr">function</span><span class="p">()</span>
+  <span class="n">NanosTestingMap</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1676.000</span><span class="p">,</span> <span class="mf">6963.000</span><span class="p">,</span> <span class="mf">132.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_WoodenTable.SM_WoodenTable&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1711.000</span><span class="p">,</span> <span class="mf">7008.000</span><span class="p">,</span> <span class="mf">132.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">149.999969</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_WoodenChair.SM_WoodenChair&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1786.000</span><span class="p">,</span> <span class="mf">7273.000</span><span class="p">,</span> <span class="mf">102.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/Extra/SM_TireLarge.SM_TireLarge&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1875.000</span><span class="p">,</span> <span class="mf">7283.000</span><span class="p">,</span> <span class="mf">140.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="o">-</span><span class="mf">28.768557</span><span class="p">,</span> <span class="mf">170.121216</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.247620</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/Extra/SM_TireLarge.SM_TireLarge&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">3721.000</span><span class="p">,</span> <span class="mf">8549.000</span><span class="p">,</span> <span class="mf">122.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_Stool.SM_Stool&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1686.000</span><span class="p">,</span> <span class="mf">6983.000</span><span class="p">,</span> <span class="mf">217.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_TeaPot_Interior.SM_TeaPot_Interior&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1591.000</span><span class="p">,</span> <span class="mf">7178.000</span><span class="p">,</span> <span class="mf">116.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/ExteriorDecoration/SM_OilDrum.SM_OilDrum&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">4606.000</span><span class="p">,</span> <span class="mf">9042.000</span><span class="p">,</span> <span class="mf">102.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/Extra/SM_Bucket5Gallon.SM_Bucket5Gallon&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">4322.000</span><span class="p">,</span> <span class="mf">8214.000</span><span class="p">,</span> <span class="mf">102.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/Extra/SM_Crate_07.SM_Crate_07&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">4309.000</span><span class="p">,</span> <span class="mf">8197.000</span><span class="p">,</span> <span class="mf">154.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_Crate_03.SM_Crate_03&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">4291.000</span><span class="p">,</span> <span class="mf">8122.000</span><span class="p">,</span> <span class="mf">102.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_Crate_04.SM_Crate_04&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1675.000</span><span class="p">,</span> <span class="mf">6930.000</span><span class="p">,</span> <span class="mf">225.191</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_Pot_01.SM_Pot_01&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1622.000</span><span class="p">,</span> <span class="mf">6969.000</span><span class="p">,</span> <span class="mf">231.875</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_Pot_02.SM_Pot_02&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">985.000</span><span class="p">,</span> <span class="mf">4936.000</span><span class="p">,</span> <span class="mf">238.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_TeaPot_Interior.SM_TeaPot_Interior&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">966.000</span><span class="p">,</span> <span class="mf">5086.000</span><span class="p">,</span> <span class="mf">232.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_Plate_Interior.SM_Plate_Interior&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mf">592.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">5047.000</span><span class="p">,</span> <span class="mf">437.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/Extra/SM_Barrel_02.SM_Barrel_02&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mf">9231.957</span><span class="p">,</span> <span class="mf">1057.091</span><span class="p">,</span> <span class="mf">94.046</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">95.000000</span><span class="p">,</span> <span class="mf">5.000049</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/HouseModular/SM_Bamboo_Roof45_Right.SM_Bamboo_Roof45_Right&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mf">8931.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">7428.000</span><span class="p">,</span> <span class="mf">243.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_Stool.SM_Stool&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">2552.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">5090.000</span><span class="p">,</span> <span class="mf">132.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="o">-</span><span class="mf">4.980929</span><span class="p">,</span> <span class="mf">0.436880</span><span class="p">,</span> <span class="mf">4.981057</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/Extra/SM_TireLarge.SM_TireLarge&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5565.000</span><span class="p">,</span> <span class="mf">40.000</span><span class="p">,</span> <span class="mf">426.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/Extra/SM_Crate_07.SM_Crate_07&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5250.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">375.000</span><span class="p">,</span> <span class="mf">426.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_MetalBucket_Interior_02.SM_MetalBucket_Interior_02&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5520.000</span><span class="p">,</span> <span class="mf">5.000</span><span class="p">,</span> <span class="mf">481.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_Basket_01.SM_Basket_01&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5060.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">340.000</span><span class="p">,</span> <span class="mf">431.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_WoodenTable.SM_WoodenTable&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5060.000</span><span class="p">,</span> <span class="o">-</span><span class="mf">310.000</span><span class="p">,</span> <span class="mf">516.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_Crate_03.SM_Crate_03&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5520.000</span><span class="p">,</span> <span class="mf">600.000</span><span class="p">,</span> <span class="mf">514.792</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">89.999962</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/Extra/SM_TireLarge.SM_TireLarge&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">965.000</span><span class="p">,</span> <span class="mf">5555.000</span><span class="p">,</span> <span class="mf">141.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">75.937462</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_WoodenChair.SM_WoodenChair&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1055.000</span><span class="p">,</span> <span class="mf">5580.000</span><span class="p">,</span> <span class="mf">141.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_WoodenTable.SM_WoodenTable&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1135.000</span><span class="p">,</span> <span class="mf">5555.000</span><span class="p">,</span> <span class="mf">141.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">70.312706</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_WoodenChair.SM_WoodenChair&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5780.000</span><span class="p">,</span> <span class="mf">8380.000</span><span class="p">,</span> <span class="mf">126.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_Stool.SM_Stool&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5305.000</span><span class="p">,</span> <span class="mf">7920.000</span><span class="p">,</span> <span class="mf">126.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/InteriorDecoration/SM_WoodenChair.SM_WoodenChair&quot;</span><span class="p">),</span>
+    <span class="n">Prop</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5455.000</span><span class="p">,</span> <span class="mf">8440.000</span><span class="p">,</span> <span class="mf">391.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mf">0.000000</span><span class="p">,</span> <span class="mf">0.000000</span><span class="p">,</span> <span class="mf">81.562393</span><span class="p">),</span>  <span class="s2">&quot;NanosWorld/Art/Rural/Extra/SM_Bamboo_Woodplank_01.SM_Bamboo_Woodplank_01&quot;</span><span class="p">),</span>
+
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK47</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">1850</span><span class="p">,</span> <span class="mi">9153</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK74U</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">1900</span><span class="p">,</span> <span class="mi">9153</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">GE36</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">9153</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AP5</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">9153</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">SMG11</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2050</span><span class="p">,</span> <span class="mi">9153</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Moss500</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2100</span><span class="p">,</span> <span class="mi">9153</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Glock</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2150</span><span class="p">,</span> <span class="mi">9153</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">DesertEagle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2200</span><span class="p">,</span> <span class="mi">9153</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AR4</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2250</span><span class="p">,</span> <span class="mi">9153</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">Grenade</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2300</span><span class="p">,</span> <span class="mi">9153</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Weapons/Grenades/BP_Grenade_G67.BP_Grenade_G67_C&quot;</span><span class="p">),</span>
+
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK47</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">1850</span><span class="p">,</span> <span class="mi">9234</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK74U</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">1900</span><span class="p">,</span> <span class="mi">9234</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">GE36</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">1950</span><span class="p">,</span> <span class="mi">9234</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AP5</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">9234</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">SMG11</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2050</span><span class="p">,</span> <span class="mi">9234</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Moss500</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2100</span><span class="p">,</span> <span class="mi">9234</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Glock</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2150</span><span class="p">,</span> <span class="mi">9234</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">DesertEagle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2200</span><span class="p">,</span> <span class="mi">9234</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AR4</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2250</span><span class="p">,</span> <span class="mi">9234</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">Grenade</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">2300</span><span class="p">,</span> <span class="mi">9234</span><span class="p">,</span> <span class="mi">192</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Weapons/Grenades/BP_Grenade_G67.BP_Grenade_G67_C&quot;</span><span class="p">),</span>
+
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Glock</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">5120</span><span class="p">,</span> <span class="mi">6977</span><span class="p">,</span> <span class="mi">195</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Glock</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">5067</span><span class="p">,</span> <span class="mi">6948</span><span class="p">,</span> <span class="mi">195</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Glock</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">5008</span><span class="p">,</span> <span class="mi">6912</span><span class="p">,</span> <span class="mi">195</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">SMG11</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">973</span><span class="p">,</span> <span class="mi">4995</span><span class="p">,</span> <span class="mi">235</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">GE36</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">3660</span><span class="p">,</span> <span class="mi">11025</span><span class="p">,</span> <span class="mi">57</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK47</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">7543</span><span class="p">,</span> <span class="mi">5589</span><span class="p">,</span> <span class="mi">210</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK74U</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">7466</span><span class="p">,</span> <span class="mi">5589</span><span class="p">,</span> <span class="mi">210</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AR4</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">7368</span><span class="p">,</span> <span class="mi">5589</span><span class="p">,</span> <span class="mi">210</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Moss500</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">7343</span><span class="p">,</span> <span class="mi">5572</span><span class="p">,</span> <span class="mi">156</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Moss500</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">7481</span><span class="p">,</span> <span class="mi">5572</span><span class="p">,</span> <span class="mi">156</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AP5</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">4054</span><span class="p">,</span> <span class="mi">8095</span><span class="p">,</span> <span class="mi">145</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK74U</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">9137</span><span class="p">,</span> <span class="mi">1304</span><span class="p">,</span> <span class="mi">113</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK47</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">9137</span><span class="p">,</span> <span class="mi">1243</span><span class="p">,</span> <span class="mi">113</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">GE36</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">9137</span><span class="p">,</span> <span class="mi">1155</span><span class="p">,</span> <span class="mi">113</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+
+    <span class="n">Vehicle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="mi">7262</span><span class="p">,</span> <span class="mi">130</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Vehicles/BP_Vehicle_SUV.BP_Vehicle_SUV_C&quot;</span><span class="p">),</span>
+    <span class="n">Vehicle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">530</span><span class="p">,</span> <span class="mi">7344</span><span class="p">,</span> <span class="mi">130</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Vehicles/BP_Vehicle_Pickup.BP_Vehicle_Pickup_C&quot;</span><span class="p">),</span>
+    <span class="n">Vehicle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">480</span><span class="p">,</span> <span class="mi">5080</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Vehicles/BP_Vehicle_Truck.BP_Vehicle_Truck_C&quot;</span><span class="p">),</span>
+    <span class="n">Vehicle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">1720</span><span class="p">,</span> <span class="mi">1660</span><span class="p">,</span> <span class="mi">118</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Vehicles/BP_Vehicle_Truck_Chassis.BP_Vehicle_Truck_Chassis_C&quot;</span><span class="p">),</span>
+    <span class="n">Vehicle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">9650</span><span class="p">,</span> <span class="o">-</span><span class="mi">2840</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">137</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Vehicles/BP_Vehicle_Hatchback.BP_Vehicle_Hatchback_C&quot;</span><span class="p">),</span>
+    <span class="n">Vehicle</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">10630.0</span><span class="p">,</span> <span class="mf">6870.0</span><span class="p">,</span> <span class="mi">80</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">137</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Vehicles/BP_Vehicle_SportCar.BP_Vehicle_SportCar_C&quot;</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">1786.000</span><span class="p">,</span> <span class="mf">7273.000</span><span class="p">,</span> <span class="mf">120.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Items/BP_Grabable_Torch.BP_Grabable_Torch_C&quot;</span><span class="p">),</span>
+    <span class="n">Item</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mf">7575.000</span><span class="p">,</span> <span class="mf">5287.000</span><span class="p">,</span> <span class="mf">133.000</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Items/BP_Grabable_Torch.BP_Grabable_Torch_C&quot;</span><span class="p">),</span>
+
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK47</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">10928</span><span class="p">,</span> <span class="mi">4225</span><span class="p">,</span> <span class="mi">118</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK47</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">10940</span><span class="p">,</span> <span class="mi">4150</span><span class="p">,</span> <span class="mi">118</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK47</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">10950</span><span class="p">,</span> <span class="mi">4066</span><span class="p">,</span> <span class="mi">118</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">GE36</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">8029</span><span class="p">,</span> <span class="mi">4132</span><span class="p">,</span> <span class="mi">321</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">GE36</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">7945</span><span class="p">,</span> <span class="mi">4132</span><span class="p">,</span> <span class="mi">321</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">GE36</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">7857</span><span class="p">,</span> <span class="mi">4132</span><span class="p">,</span> <span class="mi">321</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK74U</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">9129</span><span class="p">,</span> <span class="o">-</span><span class="mi">3325</span><span class="p">,</span> <span class="mi">112</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK74U</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">9129</span><span class="p">,</span> <span class="o">-</span><span class="mi">3237</span><span class="p">,</span> <span class="mi">112</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AK74U</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">9129</span><span class="p">,</span> <span class="o">-</span><span class="mi">3137</span><span class="p">,</span> <span class="mi">112</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AR4</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">9208</span><span class="p">,</span> <span class="o">-</span><span class="mi">3137</span><span class="p">,</span> <span class="mi">112</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AR4</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">9208</span><span class="p">,</span> <span class="o">-</span><span class="mi">3237</span><span class="p">,</span> <span class="mi">112</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AR4</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">9208</span><span class="p">,</span> <span class="o">-</span><span class="mi">3325</span><span class="p">,</span> <span class="mi">112</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Moss500</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="o">-</span><span class="mi">10769</span><span class="p">,</span> <span class="mi">123</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">Moss500</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="o">-</span><span class="mi">10669</span><span class="p">,</span> <span class="mi">123</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">)),</span>
+    <span class="n">Grenade</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="o">-</span><span class="mi">10380</span><span class="p">,</span> <span class="mi">123</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s2">&quot;NanosWorld/Core/Weapons/Grenades/BP_Grenade_G67.BP_Grenade_G67_C&quot;</span><span class="p">),</span>
+
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AP5</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">10030</span><span class="p">,</span> <span class="o">-</span><span class="mi">2039</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">SMG11</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">10167</span><span class="p">,</span> <span class="o">-</span><span class="mi">1895</span><span class="p">,</span> <span class="mi">101</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">GE36</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mf">5243.0</span><span class="p">,</span> <span class="o">-</span><span class="mi">236</span><span class="p">,</span> <span class="mi">481</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+    <span class="n">NanosWorldWeapons</span><span class="p">.</span><span class="n">AP5</span><span class="p">(</span><span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">5243</span><span class="p">,</span> <span class="o">-</span><span class="mi">115</span><span class="p">,</span> <span class="mi">481</span><span class="p">),</span> <span class="n">Rotator</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">)),</span>
+  <span class="p">}</span>
+<span class="kr">end</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="SpawnPlayerRandomLocations.html" class="btn btn-neutral float-right" title="Spawn player at random locations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ComunicationBetweenPackages.html" class="btn btn-neutral float-left" title="Comunication Between Packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, nanos GbR
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
